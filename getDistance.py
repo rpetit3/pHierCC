@@ -3,7 +3,7 @@ from tempfile import NamedTemporaryFile
 import SharedArray as sa
 
 def getDistance(data, func_name, pool, start=0, allowed_missing=0.0):
-    with NamedTemporaryFile(dir='.', prefix='HCC_') as file :
+    with NamedTemporaryFile(prefix='HCC_') as file :
         prefix = 'file://{0}'.format(file.name)
         func = eval(func_name)
         mat_buf = '{0}.mat.sa'.format(prefix)
